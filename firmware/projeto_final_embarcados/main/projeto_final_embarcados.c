@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "adc.c"
-#include "pwm.c"
-#include "serial.c"
+#include "adc.h"
+#include "pwm.h"
+#include "serial.h"
+#include "joystick.h"
 
 #define AMOSTRAGEM_PERIODO 10
 #define PERIODO_PWM 10
@@ -31,7 +32,10 @@ void taskPWM(void *pvParameters)
     {
       Joystick_t para_pwm;
       xQueueReceive(xQueuePWM, &para_pwm,portMAX_DELAY);
-      atualizarPWM(para_pwm);
+                    printf("PWM: X=%d Y=%d\n",
+               para_pwm.x,
+               para_pwm.y);
+      atualizarPWM(&para_pwm);
     }
 }
 
@@ -40,14 +44,15 @@ void taskSerial(void *pvParameters)
     while(1)
     {
       Joystick_t para_enviar;
-      xQueueReceive(xQueuePWM,&para_enviar,portMAX_DELAY);
-      enviar_serial(para_enviar);
+      xQueueReceive(xQueueSerial,&para_enviar,portMAX_DELAY);
+      enviar_serial(&para_enviar);
     }
 }
 
 void app_main() {
-
-    hardware_init();
+  
+    adc_init();
+    pwm_init();
 
     xQueuePWM = xQueueCreate(1, sizeof(Joystick_t));
     xQueueSerial = xQueueCreate(1, sizeof(Joystick_t));
@@ -81,6 +86,4 @@ void app_main() {
       1,
       NULL
     );
-
-    vTaskStartScheduler();
 }
