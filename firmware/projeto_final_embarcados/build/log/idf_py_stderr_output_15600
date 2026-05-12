@@ -1,0 +1,44 @@
+Command: cmake -G Ninja -B C:\Users\analu\OneDrive\Área de Trabalho\Projeto-embarcados\projeto-disciplina-embarcados-2026\firmware\projeto_final_embarcados\build -DPYTHON_DEPS_CHECKED=1 -DPYTHON=C:\Users\analu\.espressif\python_env\idf6.0_py3.14_env\Scripts\python.exe -DESP_PLATFORM=1 -DCCACHE_ENABLE=True C:\Users\analu\OneDrive\Área de Trabalho\Projeto-embarcados\projeto-disciplina-embarcados-2026\firmware\projeto_final_embarcados
+Traceback (most recent call last):
+  File "C:\esp\release-v6.0\esp-idf\tools\kconfig_new\prepare_kconfig_files.py", line 121, in <module>
+    main()
+    ~~~~^^
+  File "C:\esp\release-v6.0\esp-idf\tools\kconfig_new\prepare_kconfig_files.py", line 113, in main
+    env.update(json.load(args.env_file))
+               ~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python314\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+                 ~~~~~~~^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 7711: character maps to <undefined>
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\analu\.espressif\python_env\idf6.0_py3.14_env\Lib\site-packages\kconfgen\__main__.py", line 18, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\analu\.espressif\python_env\idf6.0_py3.14_env\Lib\site-packages\kconfgen\core.py", line 442, in main
+    env = json.load(args.env_file)
+  File "C:\Python314\Lib\json\__init__.py", line 298, in load
+    return loads(fp.read(),
+                 ~~~~~~~^^
+  File "C:\Python314\Lib\encodings\cp1252.py", line 23, in decode
+    return codecs.charmap_decode(input,self.errors,decoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'charmap' codec can't decode byte 0x81 in position 7711: character maps to <undefined>
+CMake Error at C:/esp/release-v6.0/esp-idf/tools/cmake/kconfig.cmake:243 (message):
+  Failed to run kconfgen
+  (C:/Users/analu/.espressif/python_env/idf6.0_py3.14_env/Scripts/python.exe;-m;kconfgen;--list-separator=semicolon;--kconfig;C:/esp/release-v6.0/esp-idf/Kconfig;--sdkconfig-rename;C:/esp/release-v6.0/esp-idf/sdkconfig.rename;--config;C:/Users/analu/OneDrive/Área
+  de
+  Trabalho/Projeto-embarcados/projeto-disciplina-embarcados-2026/firmware/projeto_final_embarcados/sdkconfig;--env;IDF_MINIMAL_BUILD=n;--env-file;C:/Users/analu/OneDrive/Área
+  de
+  Trabalho/Projeto-embarcados/projeto-disciplina-embarcados-2026/firmware/projeto_final_embarcados/build/config.env).
+  Error 1
+Call Stack (most recent call first):
+  C:/esp/release-v6.0/esp-idf/tools/cmake/build.cmake:772 (__kconfig_generate_config)
+  C:/esp/release-v6.0/esp-idf/tools/cmake/project.cmake:773 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+

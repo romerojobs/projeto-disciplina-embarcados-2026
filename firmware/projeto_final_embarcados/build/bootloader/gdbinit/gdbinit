@@ -1,0 +1,2 @@
+source C:/esp/projeto-disciplina-embarcados-2026/firmware/projeto_final_embarcados/build/bootloader/gdbinit/symbols
+source C:/esp/projeto-disciplina-embarcados-2026/firmware/projeto_final_embarcados/build/bootloader/gdbinit/connect

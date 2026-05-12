@@ -1,0 +1,7 @@
+-Wno-frame-address
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
+"-specs=C:/esp/projeto-disciplina-embarcados-2026/firmware/projeto_final_embarcados/build/specs/picolibc.specs"
+-fno-rtti
