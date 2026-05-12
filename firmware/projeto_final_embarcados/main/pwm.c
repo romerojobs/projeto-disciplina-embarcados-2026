@@ -20,7 +20,7 @@
 
 #define SERVO_MIN_DUTY    409               // 0 graus
 #define SERVO_MAX_DUTY    1966              // 180 graus // Pulso de 2.4ms
-#define ADC_MAX_VALUE       4095            // 12 bits do ADC do ESP32
+#define ADC_MAX_VALUE       16383           // 14 bits do ADC do ESP32
 
 /* Inicialização do PWM */
 void pwm_init(void)
