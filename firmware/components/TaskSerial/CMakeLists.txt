@@ -1,5 +1,5 @@
 idf_component_register(
     SRCS "TaskSerial.c"
     INCLUDE_DIRS "."
-    REQUIRES joystick
+    REQUIRES joystick config queues
 )

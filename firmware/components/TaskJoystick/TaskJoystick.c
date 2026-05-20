@@ -8,8 +8,7 @@ void taskJoystick(void *pvParameters)
     {
       Joystick_t valores = lerADC();
       xQueueOverwrite(xQueuePWM,&valores);
-      xSemaphoreTake( xMutexUART);
-      printf("X: %d | Y: %d\n",valores->x, valores->y);
+      xQueueOverwrite(xQueueSerial,&valores);
       vTaskDelayUntil(&xLastWakeTime, pdMS_TO_TICKS(AMOSTRAGEM_PERIODO));
     }
 }
