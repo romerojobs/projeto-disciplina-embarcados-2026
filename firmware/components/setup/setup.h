@@ -6,5 +6,9 @@
 #include "joystick.h"
 #include "mutexes.h"
 #include "queues.h"
+#include "TaskJoystick.h"
+#include "TaskPWM.h"
+#include "TaskSerial.h"
+
 
 void init_rtos();

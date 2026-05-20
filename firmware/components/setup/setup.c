@@ -8,7 +8,7 @@ void init_rtos(){
     
     xTaskCreate
     (
-      taskJoystick,
+      TaskJoystick,
       "Joystick",
       2048,
       NULL,
@@ -18,7 +18,7 @@ void init_rtos(){
 
     xTaskCreate
     (
-      taskPWM,
+      TaskPWM,
       "PWM",
       2048,
       NULL,
@@ -28,7 +28,7 @@ void init_rtos(){
     
     xTaskCreate
     (
-      taskSerial,
+      TaskSerial,
       "ComunicaSerial",
       4096,
       NULL,

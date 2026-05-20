@@ -6,9 +6,10 @@ void TaskSerial(void *pvParameters)
 
     while (1)
     {
-        xQueuePeek(xQueueSerial, &valor_atual, 0);  
-        enviar_serial(&valor_atual);
-
-        vTaskDelay(pdMS_TO_TICKS(PERIODO_SERIAL));
+      if (xQueuePeek(xQueueSerial, &valor_atual, 0) == pdTRUE)
+      {
+        enviar_serial(&valor_atual);  // só executa se a fila tinha dado válido
+      }
+      vTaskDelay(pdMS_TO_TICKS(PERIODO_SERIAL));
     }
 }
