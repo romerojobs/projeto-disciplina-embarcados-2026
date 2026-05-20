@@ -1,0 +1,1 @@
+#define AMOSTRAGEM_PERIODO 10

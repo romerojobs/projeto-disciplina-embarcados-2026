@@ -4,7 +4,4 @@
 
 void enviar_serial(Joystick_t *entrada)
 {
-    printf("X: %d | Y: %d\n",
-           entrada->x,
-           entrada->y);
 }
