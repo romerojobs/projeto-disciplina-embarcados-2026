@@ -1,0 +1,29 @@
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: labyrinth123
+      DOCKER_INFLUXDB_INIT_ORG: labyrinth
+      DOCKER_INFLUXDB_INIT_BUCKET: mesa
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: XU0j8rGvmQxH31LtEJVdkzSgll9x15D613ur2G3scpYpYlTDkMIDD3pGA1W2MBbi
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb_data:
+  grafana_data:
