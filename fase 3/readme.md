@@ -1,23 +1,40 @@
-O Grafana e o InfluxDB estão hospedados em uma VM na Oracle Cloud, rodando via Docker
+O Grafana e o InfluxDB estão hospedados em uma VM na Oracle Cloud, rodando via Docker.
 
-http://163.176.174.73:3000/ -> Grafana
-http://163.176.174.73:8086 -> InfluxDB
+### Links
 
-Login Grafana:
-Usuário: admin
-Senha: 1507
+- Grafana:  
+  http://163.176.174.73:3000/
 
-Login InfluxDB:
-Usuário: admin
-Senha: labyrinth123
+- InfluxDB:  
+  http://163.176.174.73:8086/
+
+---
+
+### Grafana
+
+- Usuário: `admin`
+- Senha: `1507`
+
+### InfluxDB
+
+- Usuário: `admin`
+- Senha: `labyrinth123`
 
 ESP32 -> serial -> ponte.py (seu PC) -> InfluxDB (Oracle Cloud) -> Grafana (Oracle Cloud)
 
-O ESP32 deve enviar uma linha JSON a cada 100ms pela UART, no formato:
-```{"pitch": 12.5, "roll": -7.3}```
+---
 
-- pitch e roll em graus (float)
-- Baud rate: 115200
-- Uma linha por envio, terminada com \n
+## Formato esperado do ESP32
 
-necessário ajustar a porta serial no arquivo ponte.py
+O ESP32 deve enviar uma linha JSON a cada `100ms` pela UART no formato:
+
+```json
+{"pitch": 12.5, "roll": -7.3}
+```
+
+- `pitch` e `roll` em graus (`float`)
+- Baud rate: `115200`
+- Uma linha por envio, terminada com `\n`
+
+---
+É necessário ajustar a porta serial no arquivo `ponte.py`.
