@@ -4,11 +4,10 @@ void init_rtos(){
     
     xQueuePWM = xQueueCreate(1, sizeof(Joystick_t));
     xQueueSerial = xQueueCreate(1, sizeof(Joystick_t));
-    xMutexUART = xSemaphoreCreateMutex();
     
     xTaskCreate
     (
-      TaskJoystick,
+      taskJoystick,
       "Joystick",
       2048,
       NULL,
@@ -18,7 +17,7 @@ void init_rtos(){
 
     xTaskCreate
     (
-      TaskPWM,
+      taskPWM,
       "PWM",
       2048,
       NULL,

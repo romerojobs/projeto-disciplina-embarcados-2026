@@ -1,0 +1,5 @@
+"-specs=C:/esp/projeto-disciplina-embarcados-2026/firmware/build/bootloader/specs/picolibc.specs"
+-mlongcalls
+-fno-builtin-memcpy
+-fno-builtin-memset
+-fno-builtin-bzero
