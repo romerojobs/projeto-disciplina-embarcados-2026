@@ -1,10 +1,6 @@
 #include <stdio.h>
-#include <math.h>
+#include <stdlib.h>
 #include "pwm.h"
-
-/* estado do filtro */
-static float filtro_x = 0;
-static float filtro_y = 0;
 
 /* ================= UTIL ================= */
 
@@ -15,21 +11,6 @@ static uint32_t map_adc_to_servo(int32_t v)
 
     return (uint32_t)((v * (SERVO_MAX_DUTY - SERVO_MIN_DUTY)) / ADC_MAX_VALUE)
            + SERVO_MIN_DUTY;
-}
-
-static float apply_deadzone(float v)
-{
-    float center = ADC_MAX_VALUE / 2;
-
-    if (fabsf(v - center) < DEADZONE)
-        return center;
-
-    return v;
-}
-
-static float low_pass(float input, float prev)
-{
-    return (ALPHA * input) + ((1.0f - ALPHA) * prev);
 }
 
 /* ================= PWM ================= */
@@ -70,18 +51,23 @@ void pwm_init(void)
 
 void atualizarPWM(Joystick_t *entrada)
 {
-    float x = apply_deadzone((float)entrada->x);
-    float y = apply_deadzone((float)entrada->y);
+    static uint32_t ultimo_duty_x = 0;
+    static uint32_t ultimo_duty_y = 0;
 
-    filtro_x = low_pass(x, filtro_x);
-    filtro_y = low_pass(y, filtro_y);
+    uint32_t duty_x = map_adc_to_servo(entrada->x);
+    uint32_t duty_y = map_adc_to_servo(entrada->y);
 
-    uint32_t duty_x = map_adc_to_servo((int32_t)filtro_x);
-    uint32_t duty_y = map_adc_to_servo((int32_t)filtro_y);
+    if (abs((int)duty_x - (int)ultimo_duty_x) > HISTERESE_DUTY)
+    {
+        ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL, duty_x);
+        ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL);
+        ultimo_duty_x = duty_x;
+    }
 
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL, duty_x);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL);
-
-    ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL, duty_y);
-    ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL);
+    if (abs((int)duty_y - (int)ultimo_duty_y) > HISTERESE_DUTY)
+    {
+        ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL, duty_y);
+        ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL);
+        ultimo_duty_y = duty_y;
+    }
 }

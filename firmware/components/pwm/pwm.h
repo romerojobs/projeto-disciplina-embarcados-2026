@@ -17,17 +17,16 @@
 
 /* ================= SERVO LIMITES ================= */
 
-#define SERVO_MIN_DUTY    250   
+#define SERVO_MIN_DUTY    250
 #define SERVO_MAX_DUTY    360
 
 /* ================= ADC ================= */
 
 #define ADC_MAX_VALUE     4095
 
-/* ================= FILTRO ================= */
+/* ================= HISTERESE ================= */
 
-#define DEADZONE          80
-#define ALPHA             0.15f
+#define HISTERESE_DUTY    3
 
 /* ================= API ================= */
 
