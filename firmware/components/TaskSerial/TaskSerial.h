@@ -4,5 +4,6 @@
 #include "joystick.h"
 #include "config.h"
 #include "queues.h"
+#include "serial.h"
 
 void TaskSerial(void *pvParameters);
