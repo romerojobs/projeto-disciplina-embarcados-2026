@@ -1,19 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "pwm.h"
 
-/* ================= UTIL ================= */
-
-static uint32_t map_adc_to_servo(int32_t v)
-{
-    if (v < 0) v = 0;
-    if (v > ADC_MAX_VALUE) v = ADC_MAX_VALUE;
-
-    return (uint32_t)((v * (SERVO_MAX_DUTY - SERVO_MIN_DUTY)) / ADC_MAX_VALUE)
-           + SERVO_MIN_DUTY;
-}
-
-/* ================= PWM ================= */
+/* ================= PWM INIT ================= */
 
 void pwm_init(void)
 {
@@ -49,25 +37,35 @@ void pwm_init(void)
     ledc_channel_config(&canal_y);
 }
 
+/* ================= ATUALIZAR PWM ================= */
+
 void atualizarPWM(Joystick_t *entrada)
 {
-    static uint32_t ultimo_duty_x = 0;
-    static uint32_t ultimo_duty_y = 0;
+    static int32_t duty_x = (SERVO_MIN_DUTY + SERVO_MAX_DUTY) / 2;
+    static int32_t duty_y = (SERVO_MIN_DUTY + SERVO_MAX_DUTY) / 2;
 
-    uint32_t duty_x = map_adc_to_servo(entrada->x);
-    uint32_t duty_y = map_adc_to_servo(entrada->y);
+    /* --- Eixo X --- */
+    if (entrada->x > ADC_CENTER + JOYSTICK_THRESHOLD)
+        duty_x += PWM_STEP;
+    else if (entrada->x < ADC_CENTER - JOYSTICK_THRESHOLD)
+        duty_x -= PWM_STEP;
 
-    if (abs((int)duty_x - (int)ultimo_duty_x) > HISTERESE_DUTY)
-    {
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL, duty_x);
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL);
-        ultimo_duty_x = duty_x;
-    }
+    /* --- Eixo Y --- */
+    if (entrada->y > ADC_CENTER + JOYSTICK_THRESHOLD)
+        duty_y += PWM_STEP;
+    else if (entrada->y < ADC_CENTER - JOYSTICK_THRESHOLD)
+        duty_y -= PWM_STEP;
 
-    if (abs((int)duty_y - (int)ultimo_duty_y) > HISTERESE_DUTY)
-    {
-        ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL, duty_y);
-        ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL);
-        ultimo_duty_y = duty_y;
-    }
+    /* --- Clamping --- */
+    if (duty_x < SERVO_MIN_DUTY) duty_x = SERVO_MIN_DUTY;
+    if (duty_x > SERVO_MAX_DUTY) duty_x = SERVO_MAX_DUTY;
+    if (duty_y < SERVO_MIN_DUTY) duty_y = SERVO_MIN_DUTY;
+    if (duty_y > SERVO_MAX_DUTY) duty_y = SERVO_MAX_DUTY;
+
+    /* --- Escrita --- */
+    ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL, (uint32_t)duty_x);
+    ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL);
+
+    ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL, (uint32_t)duty_y);
+    ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL);
 }

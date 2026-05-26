@@ -23,10 +23,12 @@
 /* ================= ADC ================= */
 
 #define ADC_MAX_VALUE     4095
+#define ADC_CENTER        (ADC_MAX_VALUE / 2)
 
-/* ================= HISTERESE ================= */
+/* ================= CONTROLE DE VELOCIDADE ================= */
 
-#define HISTERESE_DUTY    3
+#define JOYSTICK_THRESHOLD  800   /* distância do centro para considerar tombado */
+#define PWM_STEP            1     /* counts incrementados/decrementados por chamada */
 
 /* ================= API ================= */
 
