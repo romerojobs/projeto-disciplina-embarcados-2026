@@ -65,7 +65,7 @@ void atualizarPWM(Joystick_t *entrada)
     /* --- Escrita --- */
     ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL, (uint32_t)duty_x);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_X_CHANNEL);
-
+    asm volatile("nop");
     ledc_set_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL, (uint32_t)duty_y);
     ledc_update_duty(LEDC_LOW_SPEED_MODE, PWM_Y_CHANNEL);
 }

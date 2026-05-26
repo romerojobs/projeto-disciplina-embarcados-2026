@@ -1,0 +1,24 @@
+Command: ninja all
+[1/15] Building C object esp-idf/TaskPWM/CMakeFiles/__idf_TaskPWM.dir/TaskPWM.c.obj
+[2/15] Building C object esp-idf/setup/CMakeFiles/__idf_setup.dir/setup.c.obj
+[3/15] Building C object esp-idf/pwm/CMakeFiles/__idf_pwm.dir/pwm.c.obj
+[4/15] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/projeto_final_embarcados.c.obj
+[5/15] Performing build step for 'bootloader'
+[1/1] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp\controle-constante\firmware\build\bootloader && C:\Users\analu\.espressif\python_env\idf6.0_py3.14_env\Scripts\python.exe C:/esp/release-v6.0/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/esp/controle-constante/firmware/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[6/15] No install step for 'bootloader'
+[7/15] Completed 'bootloader'
+[8/15] Linking C static library esp-idf\pwm\libpwm.a
+[9/15] Linking C static library esp-idf\TaskPWM\libTaskPWM.a
+[10/15] Linking C static library esp-idf\setup\libsetup.a
+[11/15] Linking C static library esp-idf\main\libmain.a
+[12/15] Generating esp-idf/esp_system/ld/sections.ld
+[13/15] Linking CXX executable projeto_final_embarcados.elf
+[14/15] Generating binary image from built executable
+esptool v5.3.dev2
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated C:/esp/controle-constante/firmware/build/projeto_final_embarcados.bin
+[15/15] C:\WINDOWS\system32\cmd.exe /C "cd /D C:\esp\controle-constante\firmware\build && C:\Users\analu\.espressif\python_env\idf6.0_py3.14_env\Scripts\python.exe C:/esp/release-v6.0/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/esp/controle-constante/firmware/build/partition_table/partition-table.bin C:/esp/controle-constante/firmware/build/projeto_final_embarcados.bin"
+projeto_final_embarcados.bin binary size 0x2dc30 bytes. Smallest app partition is 0x100000 bytes. 0xd23d0 bytes (82%) free.

@@ -1,4 +1,4 @@
 idf_component_register(
-    SRCS "queues.h"
+    SRCS "queues.c"
     INCLUDE_DIRS "."
 )

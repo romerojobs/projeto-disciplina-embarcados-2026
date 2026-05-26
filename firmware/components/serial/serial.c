@@ -4,5 +4,11 @@
 
 void enviar_serial(Joystick_t *entrada)
 {
-    printf("%d %d", entrada->x, entrada->y);
+    if (entrada == NULL)
+    {
+        printf("[Serial] Erro: ponteiro nulo recebido.\n");
+        return;
+    }
+
+    printf("[Joystick] X: %4d | Y: %4d\n", entrada->x, entrada->y);
 }
