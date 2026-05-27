@@ -1,0 +1,104 @@
+# =========================
+# macOS
+# =========================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Directory metadata
+.directory
+
+# =========================
+# Temporary files
+# =========================
+*~
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# =========================
+# Log files
+# =========================
+*.log
+
+# =========================
+# Build artifacts
+# =========================
+*.o
+*.a
+*.out
+*.exe
+*.bin
+*.elf
+*.map
+
+# =========================
+# ESP-IDF project (firmware/)
+# =========================
+
+# Build directory
+/firmware/build/
+/firmware/**/build/
+
+# ESP-IDF generated files
+/firmware/sdkconfig
+/firmware/sdkconfig.old
+/firmware/flasher_args.json
+
+# ESP-IDF dependencies
+/firmware/managed_components/
+/firmware/.espressif/
+
+/firmware/components/.idf/
+/firmware/**/components/.idf/
+
+# =========================
+# CMake generated files
+# =========================
+/firmware/CMakeCache.txt
+/firmware/CMakeFiles/
+/firmware/cmake_install.cmake
+/firmware/install_manifest.txt
+/firmware/CTestTestfile.cmake
+
+# =========================
+# Python environment files
+# =========================
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+dist/
+
+# Virtual environment folders
+venv/
+.venv/
+env/
+
+# =========================
+# Language servers
+# =========================
+.clangd/
+.ccls-cache/
+compile_commands.json
+
+# =========================
+# Windows specific
+# =========================
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =========================
+# User-specific configuration
+# =========================
+*.user
+*.workspace
+*.suo
+*.sln.docstates
+
+/firmware/.vscode/
+
+sdkconfig.old

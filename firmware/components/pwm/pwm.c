@@ -54,8 +54,8 @@ void atualizarPWM(Joystick_t *entrada)
     static uint32_t ultimo_duty_x = 0;
     static uint32_t ultimo_duty_y = 0;
 
-    uint32_t duty_x = map_adc_to_servo(entrada->x);
-    uint32_t duty_y = map_adc_to_servo(entrada->y);
+    uint32_t duty_x = map_adc_to_servo(entrada->x) - 3;
+    uint32_t duty_y = map_adc_to_servo(entrada->y) - 3;
 
     if (abs((int)duty_x - (int)ultimo_duty_x) > HISTERESE_DUTY)
     {

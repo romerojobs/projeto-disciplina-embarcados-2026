@@ -17,8 +17,13 @@
 
 /* ================= SERVO LIMITES ================= */
 
-#define SERVO_MIN_DUTY    250
-#define SERVO_MAX_DUTY    360
+//#define SERVO_MIN_DUTY    102 // 0
+//#define SERVO_MAX_DUTY    491 // 180
+
+#define SERVO_MIN_DUTY    275 // 80
+#define SERVO_MAX_DUTY    318 // 100
+
+
 
 /* ================= ADC ================= */
 
