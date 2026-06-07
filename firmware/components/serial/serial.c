@@ -30,15 +30,12 @@ void enviar_serial(const mpu6050_raw_t *mpu)
     float ay = mpu->ay / 16384.0f;
     float az = mpu->az / 16384.0f;
 
-    /* Pitch: rotação em torno do eixo Y (inclinação frente/trás) */
+    /* Pitch: rotação em torno do eixo Y */
     float pitch = atan2f(-ax, sqrtf(ay * ay + az * az)) * (180.0f / M_PI);
 
-    /* Roll: rotação em torno do eixo X (inclinação lateral) */
+    /* Roll: rotação em torno do eixo X */
     float roll  = atan2f(ay, az) * (180.0f / M_PI);
 
-    char buf[64];
-    int len = snprintf(buf, sizeof(buf),
-                       "{\"pitch\": %.1f, \"roll\": %.1f}\n",
-                       pitch, roll);
-    uart_write_bytes(SERIAL_UART_PORT, buf, len);
+    /* Envia direto pelo printf */
+    printf("{\"pitch\": %.1f, \"roll\": %.1f}\n", pitch, roll);
 }
