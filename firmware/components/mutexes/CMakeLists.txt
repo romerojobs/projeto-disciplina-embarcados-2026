@@ -1,4 +1,5 @@
 idf_component_register(
-    SRCS "mutexes.h"
+    SRCS "mutexes.c"
     INCLUDE_DIRS "."
+    REQUIRES freertos
 )

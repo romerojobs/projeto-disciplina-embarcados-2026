@@ -1,4 +1,6 @@
-#include "joystick.h"
-#include <stdio.h>
+#pragma once
 
-void enviar_serial(Joystick_t *entrada);
+#include "global_data.h"
+
+void serial_init(void);
+void enviar_serial(const mpu6050_raw_t *mpu);

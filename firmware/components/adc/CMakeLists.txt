@@ -1,5 +1,5 @@
 idf_component_register(
     SRCS "adc.c"
     INCLUDE_DIRS "."
-    REQUIRES esp_adc joystick
+    REQUIRES esp_adc global_data config
 )

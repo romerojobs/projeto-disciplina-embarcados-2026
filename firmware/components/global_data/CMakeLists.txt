@@ -1,4 +1,4 @@
 idf_component_register(
-    SRCS "joystick.h"
+    SRCS "global_data.c"
     INCLUDE_DIRS "."
 )

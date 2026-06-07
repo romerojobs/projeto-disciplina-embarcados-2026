@@ -1,5 +1,7 @@
+#pragma once
+
 #include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
+#include "freertos/queue.h"
+#include "global_data.h"
 
-extern QueueHandle_t xQueuePWM, xQueueSerial;
-
+extern QueueHandle_t xQueuePWM;
