@@ -1,7 +1,7 @@
 import serial
 
 #SERIAL_PORT = "COM3"  # Windows
-SERIAL_PORT = "/dev/tty.usbmodem5AE70272321" # MacOS
+SERIAL_PORT = "/dev/tty.usbmodem1301" # MacOS
 #SERIAL_PORT = "/dev/ttyACM0" # Linux
 
 BAUD_RATE = 115200

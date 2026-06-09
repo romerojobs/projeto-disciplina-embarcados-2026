@@ -34,8 +34,8 @@
 #define MPU6050_ADDR         0x68
 #define MPU6050_REG_DATA     0x3B
 #define MPU6050_I2C_PORT     I2C_NUM_0
-#define I2C_SDA_GPIO         1
-#define I2C_SCL_GPIO         2
+#define I2C_SDA_GPIO         35
+#define I2C_SCL_GPIO         36
 #define I2C_FREQ_HZ          400000
 
 /* ============================================================
