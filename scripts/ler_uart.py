@@ -1,6 +1,9 @@
 import serial
 
-SERIAL_PORT = "COM3"  # ajuste aqui
+#SERIAL_PORT = "COM3"  # Windows
+SERIAL_PORT = "/dev/tty.usbmodem5AE70272321" # MacOS
+#SERIAL_PORT = "/dev/ttyACM0" # Linux
+
 BAUD_RATE = 115200
 
 print(f"Aguardando dados na porta {SERIAL_PORT}...")
