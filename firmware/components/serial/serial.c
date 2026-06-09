@@ -34,8 +34,12 @@ void enviar_serial(const mpu6050_raw_t *mpu)
     float pitch = atan2f(-ax, sqrtf(ay * ay + az * az)) * (180.0f / M_PI);
 
     /* Roll: rotação em torno do eixo X */
-    float roll  = atan2f(ay, az) * (180.0f / M_PI);
+    //float roll  = atan2f(ay, az) * (180.0f / M_PI);
+    float roll = atan2f(ay, -az) * (180.0f / M_PI);
+
 
     /* Envia direto pelo printf */
+    //printf("{\"pitch\": %.1f, \"roll\": %.1f \"ax\": %d, \"ay\": %d, \"az\": %d}\n", pitch, roll,mpu->ax,mpu->ay,mpu->az);
     printf("{\"pitch\": %.1f, \"roll\": %.1f}\n", pitch, roll);
+
 }
