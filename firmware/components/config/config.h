@@ -20,13 +20,16 @@
  * ============================================================ */
 #define SERVO_RESOLUTION     LEDC_TIMER_12_BIT
 #define SERVO_FREQ           50
-#define PWM_X_GPIO           4
-#define PWM_Y_GPIO           5
+#define PWM_X_GPIO           5
+#define PWM_Y_GPIO           4
 #define PWM_X_CHANNEL        LEDC_CHANNEL_0
 #define PWM_Y_CHANNEL        LEDC_CHANNEL_1
 #define SERVO_MIN_DUTY       275
 #define SERVO_MAX_DUTY       318
 #define HISTERESE_DUTY       3
+
+#define DUTY_X_OFFSET        -4
+#define DUTY_Y_OFFSET        -4
 
 /* ============================================================
  *  I2C / MPU6050
@@ -37,6 +40,12 @@
 #define I2C_SDA_GPIO         35
 #define I2C_SCL_GPIO         36
 #define I2C_FREQ_HZ          400000
+
+#define PITCH_OFFSET         3.3
+#define ROLL_OFFSET          0
+
+#define PITCH_SENTIDO        -1
+#define ROLL_SENTIDO         -1
 
 /* ============================================================
  *  UART / Serial

@@ -6,7 +6,7 @@ void taskJoystick(void *pvParameters)
     while (1) {
         Joystick_t valores = lerADC();
         valores.x = 4095 - valores.x;  /* Eixo X invertido */
-        valores.y = valores.y;  /* Eixo Y invertido */
+        valores.y = 4095 - valores.y;  /* Eixo Y invertido */
 
         xQueueOverwrite(xQueuePWM, &valores);
 
