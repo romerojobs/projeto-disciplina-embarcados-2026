@@ -3,8 +3,8 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "global_data.h"
-#include "config.h"
+#include "mpu.h"
 #include "mutexes.h"
-#include "serial.h"
+#include "config.h"
 
-void TaskSerial(void *pvParameters);
+void taskMPU(void *pvParameters);

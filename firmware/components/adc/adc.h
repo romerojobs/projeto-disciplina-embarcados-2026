@@ -1,8 +1,6 @@
-#include "esp_adc/adc_oneshot.h"
-#include "joystick.h"
+#pragma once
 
-/* Inicialização do ADC */
-void adc_init(void);
+#include "global_data.h"
 
-/* Leitura do joystick */
+void       adc_init(void);
 Joystick_t lerADC(void);
