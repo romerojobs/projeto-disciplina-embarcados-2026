@@ -13,7 +13,7 @@ O Grafana e o InfluxDB estão hospedados em uma VM na Oracle Cloud, rodando via 
 ### Grafana
 
 - Usuário: `admin`
-- Senha: `1507`
+- Senha: `admin`
 
 ### InfluxDB
 

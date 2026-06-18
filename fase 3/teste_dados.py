@@ -6,7 +6,7 @@ from influxdb_client.client.write_api import SYNCHRONOUS
 TOKEN = "XU0j8rGvmQxH31LtEJVdkzSgll9x15D613ur2G3scpYpYlTDkMIDD3pGA1W2MBbi"
 ORG = "labyrinth"
 BUCKET = "mesa"
-URL = "http://163.176.174.73:8086"
+URL = "http://localhost:8086"
 
 client = InfluxDBClient(url=URL, token=TOKEN, org=ORG)
 write_api = client.write_api(write_options=SYNCHRONOUS)
