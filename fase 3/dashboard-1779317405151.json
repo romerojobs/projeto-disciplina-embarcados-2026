@@ -4,19 +4,19 @@
   "metadata": {
     "name": "ad98fbg",
     "namespace": "default",
-    "uid": "141eaf4f-82da-4f2d-b08f-ff870ff2a94a",
-    "resourceVersion": "1779381866280998",
-    "generation": 14,
-    "creationTimestamp": "2026-05-20T23:56:11Z",
+    "uid": "62c06f75-c98a-4f2e-8e24-98e5daa9d30a",
+    "resourceVersion": "1781963413566018",
+    "generation": 15,
+    "creationTimestamp": "2026-06-18T13:27:14Z",
     "labels": {
-      "grafana.app/deprecatedInternalID": "3607625547096064"
+      "grafana.app/deprecatedInternalID": "447796253175808"
     },
     "annotations": {
-      "grafana.app/createdBy": "user:ffmohqpj1i9z4e",
+      "grafana.app/createdBy": "user:bfpienfoyxvk0d",
       "grafana.app/folder": "",
-      "grafana.app/saved-from-ui": "Grafana v13.0.1+security-01 (9bbe672d)",
-      "grafana.app/updatedBy": "user:ffmohqpj1i9z4e",
-      "grafana.app/updatedTimestamp": "2026-05-21T16:44:26Z"
+      "grafana.app/saved-from-ui": "Grafana v13.0.2 (3fcdbc5a)",
+      "grafana.app/updatedBy": "user:bfpienfoyxvk0d",
+      "grafana.app/updatedTimestamp": "2026-06-20T13:50:13Z"
     }
   },
   "spec": {
@@ -63,7 +63,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "datasource": {
-                        "name": "afmohxrexh5ogf"
+                        "name": "bfpifebkjkiyoe"
                       },
                       "spec": {
                         "query": "from(bucket: \"mesa\")\r\n  |> range(start: -1m)\r\n  |> filter(fn: (r) => r._measurement == \"orientacao\")\r\n  |> filter(fn: (r) => r._field == \"pitch\")"
@@ -81,7 +81,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1+security-01",
+            "version": "13.0.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -178,7 +178,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "datasource": {
-                        "name": "afmohxrexh5ogf"
+                        "name": "bfpifebkjkiyoe"
                       },
                       "spec": {
                         "query": "from(bucket: \"mesa\")\r\n  |> range(start: -1m)\r\n  |> filter(fn: (r) => r._measurement == \"orientacao\")\r\n  |> filter(fn: (r) => r._field == \"roll\")"
@@ -196,7 +196,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "timeseries",
-            "version": "13.0.1+security-01",
+            "version": "13.0.2",
             "spec": {
               "options": {
                 "annotations": {
@@ -293,7 +293,7 @@
                       "group": "influxdb",
                       "version": "v0",
                       "datasource": {
-                        "name": "afmohxrexh5ogf"
+                        "name": "bfpifebkjkiyoe"
                       },
                       "spec": {
                         "query": "from(bucket: \"mesa\")\r\n  |> range(start: -1m)\r\n  |> filter(fn: (r) => r._measurement == \"orientacao\")\r\n  |> filter(fn: (r) => r._field == \"pitch\" or r._field == \"roll\")\r\n  |> last()"
@@ -311,7 +311,7 @@
           "vizConfig": {
             "kind": "VizConfig",
             "group": "gauge",
-            "version": "13.0.1+security-01",
+            "version": "13.0.2",
             "spec": {
               "options": {
                 "barShape": "flat",
@@ -435,20 +435,17 @@
     "tags": [],
     "timeSettings": {
       "timezone": "browser",
-      "from": "now-5m",
+      "from": "now-1m",
       "to": "now",
-      "autoRefresh": "auto",
+      "autoRefresh": "200ms",
       "autoRefreshIntervals": [
+        "200ms",
+        "500ms",
+        "1s",
         "5s",
         "10s",
         "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
+        "1m"
       ],
       "hideTimepicker": false,
       "fiscalYearStartMonth": 0
