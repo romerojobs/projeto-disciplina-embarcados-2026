@@ -55,3 +55,11 @@
 #define SERIAL_BAUD_RATE     115200
 #define SERIAL_TX_GPIO       43    /* GPIO43 = UART0 TX no ESP32-S3 */
 #define SERIAL_RX_GPIO       44    /* GPIO44 = UART0 RX no ESP32-S3 */
+
+/* ============================================================
+ *  Sensor de vitória
+ * ============================================================ */
+
+#define PERIODO_LEITURA_VITORIA 10
+#define SENSOR_VITORIA_PIN GPIO_NUM_38
+#define LED_VITORIA_PIN GPIO_NUM_37

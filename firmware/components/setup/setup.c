@@ -10,4 +10,5 @@ void init_rtos(void)
     xTaskCreate(taskMPU,      "MPU",            2048, NULL, 2, NULL);
     xTaskCreate(taskPWM,      "PWM",            2048, NULL, 1, NULL);
     xTaskCreate(TaskSerial,   "ComunicaSerial", 4096, NULL, 1, NULL);
+    xTaskCreate(TaskVitoria,  "Vitoria", 2048, NULL, 1, NULL );
 }

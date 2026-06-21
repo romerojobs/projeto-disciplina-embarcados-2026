@@ -13,5 +13,6 @@
 #include "TaskMPU.h"
 #include "TaskPWM.h"
 #include "TaskSerial.h"
+#include "TaskVitoria.h"
 
 void init_rtos(void);
