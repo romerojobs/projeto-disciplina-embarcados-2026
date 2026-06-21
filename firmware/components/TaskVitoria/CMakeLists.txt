@@ -1,5 +1,5 @@
 idf_component_register(
-    SRCS "setup.c"
+    SRCS "TaskVitoria.c"
     INCLUDE_DIRS "."
-    REQUIRES config 
+    REQUIRES config esp_driver_gpio
 )

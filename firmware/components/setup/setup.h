@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "mpu.h"
 #include "pwm.h"
+#include "gpio.h"
 #include "serial.h"
 #include "global_data.h"
 #include "mutexes.h"

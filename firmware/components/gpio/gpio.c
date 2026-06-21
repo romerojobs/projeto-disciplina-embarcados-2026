@@ -1,6 +1,6 @@
 #include "gpio.h"
 
-static void gpio_init(void)
+void gpio_init(void)
 {
 
     gpio_config_t sensor_vitoria_conf = 
