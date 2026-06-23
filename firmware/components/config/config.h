@@ -61,5 +61,5 @@
  * ============================================================ */
 
 #define PERIODO_LEITURA_VITORIA 10
-#define SENSOR_VITORIA_PIN GPIO_NUM_38
-#define LED_VITORIA_PIN GPIO_NUM_37
+#define SENSOR_VITORIA_PIN GPIO_NUM_17
+#define LED_VITORIA_PIN GPIO_NUM_6
