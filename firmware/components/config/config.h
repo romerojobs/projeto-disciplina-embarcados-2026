@@ -28,8 +28,8 @@
 #define SERVO_MAX_DUTY       318
 #define HISTERESE_DUTY       3
 
-#define DUTY_X_OFFSET        -4
-#define DUTY_Y_OFFSET        -4
+#define DUTY_X_OFFSET        10
+#define DUTY_Y_OFFSET        -2
 
 /* ============================================================
  *  I2C / MPU6050

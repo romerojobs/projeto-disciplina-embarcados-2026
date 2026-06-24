@@ -3,7 +3,8 @@ import json
 from influxdb_client import InfluxDBClient, Point
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-SERIAL_PORT = "COM3" #porta random, necessário trocar dps
+#SERIAL_PORT = "COM3" #porta random, necessário trocar dps
+SERIAL_PORT = "/dev/tty.usbmodem1301"
 BAUD_RATE = 115200
 TOKEN = "XU0j8rGvmQxH31LtEJVdkzSgll9x15D613ur2G3scpYpYlTDkMIDD3pGA1W2MBbi"
 ORG = "labyrinth"
