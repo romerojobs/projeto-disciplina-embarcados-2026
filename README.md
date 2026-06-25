@@ -6,7 +6,7 @@ Equipe:
 - Romero Galdino de Albuquerque
 
 Link para o relatório técnico do projeto: 
-https://docs.google.com/document/d/13xSNldt-rIYwIwjLNw7sTPXkCMiU7teWG2fEGwoB5-I/edit?usp=sharing
+https://docs.google.com/document/d/13xSNldt-rIYwIwjLNw7sTPXkCMiU7teWG2fEGwoB5-I/edit?usp=sharing<br>
 
 Vídeo demonstrativo do projeto:
 https://www.youtube.com/shorts/6RJHCfLUGrI
