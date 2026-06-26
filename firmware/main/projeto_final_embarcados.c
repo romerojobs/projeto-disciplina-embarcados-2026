@@ -7,6 +7,7 @@ void app_main(void)
     mpu6050_init();
     pwm_init();
     serial_init();
+    gpio_init();
     init_rtos();
     printf("RTOS iniciado!\n");
 }

@@ -28,8 +28,8 @@
 #define SERVO_MAX_DUTY       318
 #define HISTERESE_DUTY       3
 
-#define DUTY_X_OFFSET        -4
-#define DUTY_Y_OFFSET        -4
+#define DUTY_X_OFFSET        10
+#define DUTY_Y_OFFSET        -2
 
 /* ============================================================
  *  I2C / MPU6050
@@ -55,3 +55,11 @@
 #define SERIAL_BAUD_RATE     115200
 #define SERIAL_TX_GPIO       43    /* GPIO43 = UART0 TX no ESP32-S3 */
 #define SERIAL_RX_GPIO       44    /* GPIO44 = UART0 RX no ESP32-S3 */
+
+/* ============================================================
+ *  Sensor de vitória
+ * ============================================================ */
+
+#define PERIODO_LEITURA_VITORIA 10
+#define SENSOR_VITORIA_PIN GPIO_NUM_17
+#define LED_VITORIA_PIN GPIO_NUM_6
